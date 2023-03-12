@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="./projeto/responsivo.css">
+
+	<title>Devil may cry</title>
+
+</head>
+<body>
+	<header>
+	
+	</header>
+
+	<main>
+
+		<div class="carrossel">
+			<img class="imagem ativa" src="Devil-May-Cry1.jpg " alt="Vergil abrindo a espada">
+
+			<img class="imagem" src="Devil-May-cry2.jpg " alt="Dante encarando e segurando a espada">
+
+			<img class="imagem" src="Devil-May-Cry3.jpg " alt="Vergil fazendo pose com a espada">
+
+			<img class="imagem" src="Devil-May-Cry4.jpg " alt="Vergil lutando com os monstros">
+			
+		</div>
+		<div class="conteudo">
+			<div class="informacoes">
+				<img class="logo"src="Dmc.png" alt="Logo-Devil-May-Cry">
+				
+				<p class="descricao">Devil May Cry é uma série de jogos eletrônicos de ação-aventura de hack and slash, produzida pela Capcom e criada por Hideki Kamiya. A série centra-se no objectivo do protagonista Dante, que extermina demônios como forma de vingar o assassinato da sua mãe.</p>
+				
+			</div>
+
+			<div class="botoes-carrossel">
+				<button class="botao selecionado" id="botao1"></button>
+				<button class="botao"></button>
+				<button class="botao"></button>
+				<button class="botao"></button>
+
+			</div>
+		</div>
+
+		<aside class="menu-lateral">
+			<ul>
+				<li>
+					<a href="" target="_blank">
+						<img src="Git-Hub.png" alt="icone GitHub" class="icone">
+					</a>
+				</li>
+
+				<li>
+					<a href="" target="_blank">
+						<img src="linkedin-ogo.svg" alt="icone Likedin" class="icone">
+					</a>
+				</li>
+		</aside>
+	</main>
+  <script type="text/javascript">
+  	//1) Jeito de pegar os botaos do carrossel no HTML
+  	
+  	const botaoCarrossel = document.querySelectorAll(".botao")
+  	const imagens = document.querySelectorAll(".imagem") 
+
+  	//2) Um jeito pegar o clique do usuario
+
+  	 botaoCarrossel.forEach((botao, indice) =>{
+  	 	botao.addEventListener('click', () =>{
+  	 	
+  	 
+  	 //3) Descmarcar o item do usuario
+
+  	 const botaoSelecionado = document.querySelector(".selecionado");
+
+  	 botaoSelecionado.classList.remove('selecionado');
+
+  	 //4) Marca botao oomo tivesse selecionaddo
+
+  	 botao.classList.add('selecionado');
+
+  	 //5) esconder imagme de fundo
+  	 const imagemAtiva = document.querySelector(".ativa")
+  	 imagemAtiva.classList.remove('ativa');
+  	    
+
+  	 //6) Fazer aparecer imagme junto com o botão clicado
+
+  	 imagens[indice].classList.add('ativa');
+
+  	 });
+
+   })
+
+
+
+
+
+  </script>
+</body>
+</html>
